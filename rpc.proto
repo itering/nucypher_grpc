@@ -1,0 +1,56 @@
+syntax = "proto3";
+
+package nucypher;
+
+service ReProxy {
+    rpc Encrypt (EncryptRequest) returns (EncryptReply) {
+    }
+    rpc Decrypt (DecryptRequest) returns (DecryptReply) {
+    }
+    rpc GetKFlags (GetKFlagsRequest) returns (GetKFlagsReply) {
+    }
+    rpc Capsule (CapsuleRequest) returns (CapsuleReply) {
+    }
+}
+
+message EncryptRequest {
+    string pk = 1;
+    string text = 2;
+}
+
+message EncryptReply {
+    string message = 1;
+    string capsule = 2;
+}
+
+message DecryptRequest {
+    string sk = 1;
+    string text = 2;
+    string capsule = 3;
+}
+
+message DecryptReply {
+    string text = 1;
+}
+
+message GetKFlagsRequest {
+    string sk = 1;
+    string pk = 2;
+}
+
+message GetKFlagsReply {
+    map<string, string> flags = 1;
+    string text = 2;
+}
+
+message CapsuleRequest {
+    string capsule = 1;
+    map<string, string> flags = 2;
+    string cpk = 3;
+    string rpk = 4;
+    string ppk = 5;
+}
+
+message CapsuleReply {
+    string text = 1;
+}
