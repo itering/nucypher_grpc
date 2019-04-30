@@ -40,7 +40,7 @@ class UmbralApi(object):
 
         for cFrag in c_frags:
             capsule.attach_cfrag(cFrag)
-        return capsule
+        return capsule.to_bytes()
 
 
 class EscrowApi(object):

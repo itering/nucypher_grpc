@@ -23,13 +23,13 @@ class ReProxy(rpc_pb2_grpc.ReProxyServicer):
         capsule = rpc_api.pre.Capsule.from_bytes(bytes.fromhex(request.capsule),
                                                  rpc_api.pre.UmbralParameters(Curve(714)))
         text = rpc_api.UmbralApi.decrypt_by_sk(sk, encrypt_text, capsule)
-        return rpc_pb2.EncryptReply(message=text.hex())
+        return rpc_pb2.EncryptReply(text=text.hex())
 
     def GetKFlags(self, request, context):
         sk = keys.UmbralPrivateKey.from_bytes(bytes.fromhex(request.sk))
         cpk = keys.UmbralPublicKey.from_bytes(bytes.fromhex(request.pk))
-        text = rpc_api.UmbralApi.generate_k_flags(sk, cpk)
-        return rpc_pb2.EncryptReply(message=text.hex())
+        k_frags, proxy_pk = rpc_api.UmbralApi.generate_k_flags(sk, cpk)
+        return rpc_pb2.EncryptReply(flags=k_frags, text=proxy_pk.hex())
 
     def Capsule(self, request, context):
         capsule = rpc_api.pre.Capsule.from_bytes(bytes.fromhex(request.capsule),
@@ -39,7 +39,7 @@ class ReProxy(rpc_pb2_grpc.ReProxyServicer):
         rpk = keys.UmbralPublicKey.from_bytes(bytes.fromhex(request.rpk))
         ppk = keys.UmbralPublicKey.from_bytes(bytes.fromhex(request.ppk))
         text = rpc_api.UmbralApi.capsule_attach(capsule, flags, cpk, rpk, ppk)
-        return rpc_pb2.EncryptReply(message=text.hex())
+        return rpc_pb2.EncryptReply(text=text.hex())
 
 
 def serve():
