@@ -1,5 +1,6 @@
 from umbral import pre, keys, signing
 import random
+from typing import List
 
 
 class UmbralApi(object):
@@ -10,12 +11,22 @@ class UmbralApi(object):
         return encrypt_text, capsule
 
     @classmethod
-    def decrypt_by_sk(cls, sk: keys.UmbralPrivateKey, encrypt_text: bytes, capsule: pre.Capsule):
+    def decrypt_by_sk(cls, sk: keys.UmbralPrivateKey, d_pk: keys.UmbralPublicKey, v_pk: keys.UmbralPublicKey,
+                      encrypt_text: bytes, capsule: pre.Capsule, k_frags):
+        capsule.set_correctness_keys(delegating=d_pk,
+                                     receiving=sk.get_pubkey(),
+                                     verifying=v_pk)
+        c_frags = list()
+        for kFrag in k_frags:
+            c_frags.append(pre.reencrypt(kfrag=kFrag, capsule=capsule))
+        for cfrag in c_frags:
+            capsule.attach_cfrag(cfrag)
+
         decrypt_text = pre.decrypt(ciphertext=encrypt_text, capsule=capsule, decrypting_key=sk)
-        return decrypt_text
+        return decrypt_text.decode("utf-8")
 
     @classmethod
-    def generate_k_flags(cls, sk: keys.UmbralPrivateKey, escrow_pk: keys.UmbralPublicKey):
+    def generate_k_flags(cls, sk: keys.UmbralPrivateKey, escrow_pk: keys.UmbralPublicKey) -> (List[pre.KFrag], str):
         proxy_signing_key = keys.UmbralPrivateKey.gen_key()
         proxy_public_key = proxy_signing_key.get_pubkey()
         signer = signing.Signer(private_key=proxy_signing_key)
@@ -29,10 +40,8 @@ class UmbralApi(object):
 
     @classmethod
     def capsule_attach(cls, capsule: pre.Capsule, k_frags, d_pk: keys.UmbralPublicKey, r_pk: keys.UmbralPublicKey,
-                       p_pk: keys.UmbralPublicKey):
-        capsule.set_correctness_keys(delegating=d_pk,
-                                     receiving=r_pk,
-                                     verifying=p_pk)
+                       v_pk: keys.UmbralPublicKey):
+        capsule.set_correctness_keys(delegating=d_pk, receiving=r_pk, verifying=v_pk)
 
         c_frags = list()
         for kFrag in k_frags:

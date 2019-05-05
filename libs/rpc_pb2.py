@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='nucypher',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\trpc.proto\x12\x08nucypher\"*\n\x0e\x45ncryptRequest\x12\n\n\x02pk\x18\x01 \x01(\t\x12\x0c\n\x04text\x18\x02 \x01(\t\"0\n\x0c\x45ncryptReply\x12\x0f\n\x07message\x18\x01 \x01(\t\x12\x0f\n\x07\x63\x61psule\x18\x02 \x01(\t\";\n\x0e\x44\x65\x63ryptRequest\x12\n\n\x02sk\x18\x01 \x01(\t\x12\x0c\n\x04text\x18\x02 \x01(\t\x12\x0f\n\x07\x63\x61psule\x18\x03 \x01(\t\"\x1c\n\x0c\x44\x65\x63ryptReply\x12\x0c\n\x04text\x18\x01 \x01(\t\"*\n\x10GetKFlagsRequest\x12\n\n\x02sk\x18\x01 \x01(\t\x12\n\n\x02pk\x18\x02 \x01(\t\"\x80\x01\n\x0eGetKFlagsReply\x12\x32\n\x05\x66lags\x18\x01 \x03(\x0b\x32#.nucypher.GetKFlagsReply.FlagsEntry\x12\x0c\n\x04text\x18\x02 \x01(\t\x1a,\n\nFlagsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xaa\x01\n\x0e\x43\x61psuleRequest\x12\x0f\n\x07\x63\x61psule\x18\x01 \x01(\t\x12\x32\n\x05\x66lags\x18\x02 \x03(\x0b\x32#.nucypher.CapsuleRequest.FlagsEntry\x12\x0b\n\x03\x63pk\x18\x03 \x01(\t\x12\x0b\n\x03rpk\x18\x04 \x01(\t\x12\x0b\n\x03ppk\x18\x05 \x01(\t\x1a,\n\nFlagsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x1c\n\x0c\x43\x61psuleReply\x12\x0c\n\x04text\x18\x01 \x01(\t2\x8b\x02\n\x07ReProxy\x12=\n\x07\x45ncrypt\x12\x18.nucypher.EncryptRequest\x1a\x16.nucypher.EncryptReply\"\x00\x12=\n\x07\x44\x65\x63rypt\x12\x18.nucypher.DecryptRequest\x1a\x16.nucypher.DecryptReply\"\x00\x12\x43\n\tGetKFlags\x12\x1a.nucypher.GetKFlagsRequest\x1a\x18.nucypher.GetKFlagsReply\"\x00\x12=\n\x07\x43\x61psule\x12\x18.nucypher.CapsuleRequest\x1a\x16.nucypher.CapsuleReply\"\x00\x62\x06proto3')
+  serialized_pb=_b('\n\trpc.proto\x12\x08nucypher\"*\n\x0e\x45ncryptRequest\x12\n\n\x02pk\x18\x01 \x01(\t\x12\x0c\n\x04text\x18\x02 \x01(\t\"0\n\x0c\x45ncryptReply\x12\x0f\n\x07message\x18\x01 \x01(\t\x12\x0f\n\x07\x63\x61psule\x18\x02 \x01(\t\"d\n\x0e\x44\x65\x63ryptRequest\x12\n\n\x02sk\x18\x01 \x01(\t\x12\x0c\n\x04text\x18\x02 \x01(\t\x12\x0f\n\x07\x63\x61psule\x18\x03 \x01(\t\x12\x0b\n\x03\x63pk\x18\x04 \x01(\t\x12\x0b\n\x03ppk\x18\x05 \x01(\t\x12\r\n\x05\x66lags\x18\x06 \x03(\t\"\x1c\n\x0c\x44\x65\x63ryptReply\x12\x0c\n\x04text\x18\x01 \x01(\t\"*\n\x10GetKFlagsRequest\x12\n\n\x02sk\x18\x01 \x01(\t\x12\n\n\x02pk\x18\x02 \x01(\t\"-\n\x0eGetKFlagsReply\x12\r\n\x05\x66lags\x18\x01 \x03(\t\x12\x0c\n\x04text\x18\x02 \x01(\t\"W\n\x0e\x43\x61psuleRequest\x12\x0f\n\x07\x63\x61psule\x18\x01 \x01(\t\x12\r\n\x05\x66lags\x18\x02 \x03(\t\x12\x0b\n\x03\x63pk\x18\x03 \x01(\t\x12\x0b\n\x03rpk\x18\x04 \x01(\t\x12\x0b\n\x03ppk\x18\x05 \x01(\t\"\x1c\n\x0c\x43\x61psuleReply\x12\x0c\n\x04text\x18\x01 \x01(\t2\x8b\x02\n\x07ReProxy\x12=\n\x07\x45ncrypt\x12\x18.nucypher.EncryptRequest\x1a\x16.nucypher.EncryptReply\"\x00\x12=\n\x07\x44\x65\x63rypt\x12\x18.nucypher.DecryptRequest\x1a\x16.nucypher.DecryptReply\"\x00\x12\x43\n\tGetKFlags\x12\x1a.nucypher.GetKFlagsRequest\x1a\x18.nucypher.GetKFlagsReply\"\x00\x12=\n\x07\x43\x61psule\x12\x18.nucypher.CapsuleRequest\x1a\x16.nucypher.CapsuleReply\"\x00\x62\x06proto3')
 )
 
 
@@ -130,6 +130,27 @@ _DECRYPTREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='cpk', full_name='nucypher.DecryptRequest.cpk', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='ppk', full_name='nucypher.DecryptRequest.ppk', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='flags', full_name='nucypher.DecryptRequest.flags', index=5,
+      number=6, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -143,7 +164,7 @@ _DECRYPTREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=117,
-  serialized_end=176,
+  serialized_end=217,
 )
 
 
@@ -173,8 +194,8 @@ _DECRYPTREPLY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=178,
-  serialized_end=206,
+  serialized_start=219,
+  serialized_end=247,
 )
 
 
@@ -211,47 +232,10 @@ _GETKFLAGSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=208,
-  serialized_end=250,
+  serialized_start=249,
+  serialized_end=291,
 )
 
-
-_GETKFLAGSREPLY_FLAGSENTRY = _descriptor.Descriptor(
-  name='FlagsEntry',
-  full_name='nucypher.GetKFlagsReply.FlagsEntry',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key', full_name='nucypher.GetKFlagsReply.FlagsEntry.key', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='nucypher.GetKFlagsReply.FlagsEntry.value', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=_b('8\001'),
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=337,
-  serialized_end=381,
-)
 
 _GETKFLAGSREPLY = _descriptor.Descriptor(
   name='GetKFlagsReply',
@@ -262,7 +246,7 @@ _GETKFLAGSREPLY = _descriptor.Descriptor(
   fields=[
     _descriptor.FieldDescriptor(
       name='flags', full_name='nucypher.GetKFlagsReply.flags', index=0,
-      number=1, type=11, cpp_type=10, label=3,
+      number=1, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -277,7 +261,7 @@ _GETKFLAGSREPLY = _descriptor.Descriptor(
   ],
   extensions=[
   ],
-  nested_types=[_GETKFLAGSREPLY_FLAGSENTRY, ],
+  nested_types=[],
   enum_types=[
   ],
   serialized_options=None,
@@ -286,47 +270,10 @@ _GETKFLAGSREPLY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=253,
-  serialized_end=381,
+  serialized_start=293,
+  serialized_end=338,
 )
 
-
-_CAPSULEREQUEST_FLAGSENTRY = _descriptor.Descriptor(
-  name='FlagsEntry',
-  full_name='nucypher.CapsuleRequest.FlagsEntry',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key', full_name='nucypher.CapsuleRequest.FlagsEntry.key', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='nucypher.CapsuleRequest.FlagsEntry.value', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=_b('8\001'),
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=337,
-  serialized_end=381,
-)
 
 _CAPSULEREQUEST = _descriptor.Descriptor(
   name='CapsuleRequest',
@@ -344,7 +291,7 @@ _CAPSULEREQUEST = _descriptor.Descriptor(
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='flags', full_name='nucypher.CapsuleRequest.flags', index=1,
-      number=2, type=11, cpp_type=10, label=3,
+      number=2, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -373,7 +320,7 @@ _CAPSULEREQUEST = _descriptor.Descriptor(
   ],
   extensions=[
   ],
-  nested_types=[_CAPSULEREQUEST_FLAGSENTRY, ],
+  nested_types=[],
   enum_types=[
   ],
   serialized_options=None,
@@ -382,8 +329,8 @@ _CAPSULEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=384,
-  serialized_end=554,
+  serialized_start=340,
+  serialized_end=427,
 )
 
 
@@ -413,14 +360,10 @@ _CAPSULEREPLY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=556,
-  serialized_end=584,
+  serialized_start=429,
+  serialized_end=457,
 )
 
-_GETKFLAGSREPLY_FLAGSENTRY.containing_type = _GETKFLAGSREPLY
-_GETKFLAGSREPLY.fields_by_name['flags'].message_type = _GETKFLAGSREPLY_FLAGSENTRY
-_CAPSULEREQUEST_FLAGSENTRY.containing_type = _CAPSULEREQUEST
-_CAPSULEREQUEST.fields_by_name['flags'].message_type = _CAPSULEREQUEST_FLAGSENTRY
 DESCRIPTOR.message_types_by_name['EncryptRequest'] = _ENCRYPTREQUEST
 DESCRIPTOR.message_types_by_name['EncryptReply'] = _ENCRYPTREPLY
 DESCRIPTOR.message_types_by_name['DecryptRequest'] = _DECRYPTREQUEST
@@ -467,34 +410,18 @@ GetKFlagsRequest = _reflection.GeneratedProtocolMessageType('GetKFlagsRequest', 
 _sym_db.RegisterMessage(GetKFlagsRequest)
 
 GetKFlagsReply = _reflection.GeneratedProtocolMessageType('GetKFlagsReply', (_message.Message,), dict(
-
-  FlagsEntry = _reflection.GeneratedProtocolMessageType('FlagsEntry', (_message.Message,), dict(
-    DESCRIPTOR = _GETKFLAGSREPLY_FLAGSENTRY,
-    __module__ = 'rpc_pb2'
-    # @@protoc_insertion_point(class_scope:nucypher.GetKFlagsReply.FlagsEntry)
-    ))
-  ,
   DESCRIPTOR = _GETKFLAGSREPLY,
   __module__ = 'rpc_pb2'
   # @@protoc_insertion_point(class_scope:nucypher.GetKFlagsReply)
   ))
 _sym_db.RegisterMessage(GetKFlagsReply)
-_sym_db.RegisterMessage(GetKFlagsReply.FlagsEntry)
 
 CapsuleRequest = _reflection.GeneratedProtocolMessageType('CapsuleRequest', (_message.Message,), dict(
-
-  FlagsEntry = _reflection.GeneratedProtocolMessageType('FlagsEntry', (_message.Message,), dict(
-    DESCRIPTOR = _CAPSULEREQUEST_FLAGSENTRY,
-    __module__ = 'rpc_pb2'
-    # @@protoc_insertion_point(class_scope:nucypher.CapsuleRequest.FlagsEntry)
-    ))
-  ,
   DESCRIPTOR = _CAPSULEREQUEST,
   __module__ = 'rpc_pb2'
   # @@protoc_insertion_point(class_scope:nucypher.CapsuleRequest)
   ))
 _sym_db.RegisterMessage(CapsuleRequest)
-_sym_db.RegisterMessage(CapsuleRequest.FlagsEntry)
 
 CapsuleReply = _reflection.GeneratedProtocolMessageType('CapsuleReply', (_message.Message,), dict(
   DESCRIPTOR = _CAPSULEREPLY,
@@ -504,8 +431,6 @@ CapsuleReply = _reflection.GeneratedProtocolMessageType('CapsuleReply', (_messag
 _sym_db.RegisterMessage(CapsuleReply)
 
 
-_GETKFLAGSREPLY_FLAGSENTRY._options = None
-_CAPSULEREQUEST_FLAGSENTRY._options = None
 
 _REPROXY = _descriptor.ServiceDescriptor(
   name='ReProxy',
@@ -513,8 +438,8 @@ _REPROXY = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=587,
-  serialized_end=854,
+  serialized_start=460,
+  serialized_end=727,
   methods=[
   _descriptor.MethodDescriptor(
     name='Encrypt',
