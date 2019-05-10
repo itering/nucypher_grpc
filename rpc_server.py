@@ -59,9 +59,9 @@ def serve():
     config.set_default_curve()
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
     rpc_pb2_grpc.add_ReProxyServicer_to_server(ReProxy(), server)
-    server.add_insecure_port('[::]:50051')
+    server.add_insecure_port('[::]:50052')
     server.start()
-    print("Nucypher server start :50051")
+    print("Nucypher server start :50052")
     try:
         while True:
             time.sleep(_ONE_DAY_IN_SECONDS)

@@ -1,0 +1,14 @@
+version: "2"
+
+services:
+  nucypher:
+    container_name: 'nucypher-rpc'
+    build: .
+    ports:
+      - '50052:50052'
+    networks:
+      - app_net
+
+networks:
+  app_net:
+    external: true
